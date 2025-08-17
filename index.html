@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FTB – Fuck These Bundlers</title>
+  <meta name="description" content="FTB – Meme Coin auf Solana. Fairer Launch, starke Community.">
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background: radial-gradient(1200px 600px at 100% 0%, rgba(0,153,255,.12), transparent),
+                    radial-gradient(900px 500px at 0% 100%, rgba(255,0,153,.1), transparent),
+                    #0b0b0e; }
+    .card { border-radius: 1rem; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.05); padding: 1.5rem; }
+  </style>
+</head>
+<body class="text-white antialiased">
+  <header class="sticky top-0 z-30 backdrop-blur bg-black/30 border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="font-bold tracking-tight text-lg" id="brand">FTB <span class="ml-2 text-white/60 text-sm">Fuck These Bundlers</span></div>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#about" class="hover:text-white/90 text-white/70">About</a>
+        <a href="#tokenomics" class="hover:text-white/90 text-white/70">Tokenomics</a>
+        <a href="#how" class="hover:text-white/90 text-white/70">Kaufen</a>
+        <a href="#bundlers" class="hover:text-white/90 text-white/70">Bubble‑Map</a>
+        <a href="#action" class="hover:text-white/90 text-white/70">Gemeinsam lösen</a>
+        <a href="#faq" class="hover:text-white/90 text-white/70">FAQ</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a id="tgBtn" target="_blank" rel="noreferrer" class="px-3 py-2 rounded-xl border border-white/10 hover:bg-white/10 text-sm">Telegram</a>
+        <a id="xBtn" target="_blank" rel="noreferrer" class="px-3 py-2 rounded-xl border border-white/10 hover:bg-white/10 text-sm">X/Twitter</a>
+        <a id="pumpBtn" target="_blank" rel="noreferrer" class="hidden sm:inline-flex items-center gap-2 rounded-xl bg-emerald-500/90 hover:bg-emerald-500 px-4 py-2 text-sm font-semibold shadow">Auf Pump.fun kaufen</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-10 grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <span class="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium text-white/80">Solana • Meme Coin</span>
+          <span class="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium text-white/80">Anti‑Bundler</span>
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight" id="heroTitle">FTB: Fuck These Bundlers</h1>
+        <p class="mt-4 text-white/80 max-w-xl">
+          Wir sind die Community, die genug von Bundler‑Spielchen hat. Fairer Handel, klare Meme‑Power, offene Community.
+          Kein Finanzrat – nur Spaß und Kultur. 🚀
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a id="pumpBtn2" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 rounded-xl bg-emerald-500/90 hover:bg-emerald-500 px-5 py-3 text-sm font-semibold shadow">Jetzt kaufen</a>
+          <a id="chartBtn" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 px-5 py-3 text-sm font-semibold">Chart ansehen</a>
+        </div>
+
+        <div class="mt-6">
+          <span class="text-xs uppercase tracking-widest text-white/60">Contract</span>
+          <div class="mt-2 flex items-center gap-2 rounded-xl border border-white/10 bg-black/30 p-3">
+            <code id="contractText" class="text-white/90 text-sm truncate">TBA</code>
+            <button id="copyBtn" class="ml-auto inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-1 text-xs hover:bg-white/10">Kopieren</button>
+          </div>
+          <p id="contractHint" class="mt-2 text-xs text-amber-300/80">Tipp: Trage nach dem Launch den echten Contract ein, damit alle sicher kaufen können.</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="relative">
+          <div class="absolute inset-0 -z-10 blur-3xl opacity-40 bg-gradient-to-tr from-emerald-500/40 via-fuchsia-500/30 to-cyan-500/40 rounded-2xl"></div>
+          <div class="card">
+            <div class="aspect-[4/3] w-full rounded-xl bg-black/30 border border-white/10 flex items-center justify-center">
+              <div class="text-center px-6">
+                <div class="mx-auto mb-4 text-5xl">📈</div>
+                <p class="text-white/80">Binde hier den Live‑Chart ein (DexScreener o. Ä.).</p>
+                <p class="text-xs text-white/60 mt-2">Ersetze die Chart‑URL in der Konfiguration unten.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="card">
+          <div class="text-2xl mb-2">🛡️</div>
+          <h3 class="text-lg font-semibold mb-1">Fair Launch</h3>
+          <p class="text-white/75 text-sm">Kein Insider‑Vorteil, keine Tricks. Community first, Transparenz immer.</p>
+        </div>
+        <div class="card">
+          <div class="text-2xl mb-2">👥</div>
+          <h3 class="text-lg font-semibold mb-1">Community‑Movement</h3>
+          <p class="text-white/75 text-sm">FTB ist ein Meme – aber auch ein Statement gegen Markt‑Spielchen.</p>
+        </div>
+        <div class="card">
+          <div class="text-2xl mb-2">🚀</div>
+          <h3 class="text-lg font-semibold mb-1">Simple & Loud</h3>
+          <p class="text-white/75 text-sm">Klare Message, starke Brand, leicht zu sharen. LFG.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOKENOMICS (ohne Steuern) -->
+    <section id="tokenomics" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <h2 class="text-3xl font-extrabold mb-8">Tokenomics</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="card">
+          <h4 class="text-sm text-white/60">Supply</h4>
+          <p class="text-2xl font-bold" id="supplyText">1,000,000,000</p>
+        </div>
+        <div class="card">
+          <h4 class="text-sm text-white/60">Liquidität</h4>
+          <p class="text-2xl font-bold" id="liqText">100% in LP, renounced/burned (optional)</p>
+        </div>
+        <div class="card">
+          <h4 class="text-sm text-white/60">Chain</h4>
+          <p class="text-2xl font-bold">Solana</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUBBLE MAP / HOLDERS -->
+    <section id="bundlers" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <h2 class="text-3xl font-extrabold mb-4">Live Bubble‑Map / Holder‑Netzwerk</h2>
+      <p class="text-white/75 mb-6">Hier siehst du Wallet‑Cluster/Holder‑Verteilung zur Erkennung möglicher Bundler‑Aktivität. (Quelle per Embed)</p>
+      <div class="card p-0 overflow-hidden">
+        <div id="bubbleWrap" class="w-full" style="height:560px; background:rgba(0,0,0,.3); display:flex; align-items:center; justify-content:center;">
+          <div class="text-center px-6" id="bubbleFallback">
+            <div class="text-5xl mb-3">🫧</div>
+            <p class="text-white/80">Aktuell ist keine Bubble‑Map eingebunden.</p>
+            <p class="text-xs text-white/60 mt-2">Trage unten in der Konfiguration eine <em>embed</em>-URL (z. B. von einem Explorer/Tool) ein.<br/>Falls der Anbieter keine Einbettung erlaubt, verlinken wir stattdessen den externen Viewer.</p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-3 text-sm text-white/60">Hinweis: Manche Anbieter blockieren iframes. In dem Fall siehst du hier nichts – dann zeigen wir einen Button zum externen Link.</div>
+    </section>
+
+    <!-- ACTION: Gemeinsam Lösungen gegen Bundler -->
+    <section id="action" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <h2 class="text-3xl font-extrabold mb-6">Gemeinsam Lösungen gegen Bundler finden</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="card">
+          <h4 class="font-semibold mb-1">1) Wissen teilen</h4>
+          <p class="text-white/75 text-sm">Guides/Threads zu Erkennungsmustern (Wallet‑Clustering, unnatürliche Volumen‑Spikes, Batch‑Txs). Poste deine Erkenntnisse in Telegram/X.</p>
+        </div>
+        <div class="card">
+          <h4 class="font-semibold mb-1">2) Melden & tracken</h4>
+          <p class="text-white/75 text-sm">Auffällige Wallets/Transaktionen dokumentieren. Wir bündeln Community‑Reports und werten sie aus.</p>
+        </div>
+        <div class="card">
+          <h4 class="font-semibold mb-1">3) Tools bauen</h4>
+          <p class="text-white/75 text-sm">Open‑Source Mini‑Tools/Alerts für Cluster‑Detektion & Holder‑Konzentration. Devs willkommen.</p>
+        </div>
+      </div>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a id="tgBtn3" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 rounded-xl bg-emerald-500/90 hover:bg-emerald-500 px-5 py-3 text-sm font-semibold shadow">Join Telegram</a>
+        <a id="xBtn3" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 px-5 py-3 text-sm font-semibold">Folge auf X/Twitter</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <h2 class="text-3xl font-extrabold mb-8">FAQ</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="card"><h4 class="font-semibold">Ist FTB Finanzberatung?</h4><p class="text-white/75 text-sm mt-1">Nein. Es ist ein Meme‑Projekt. Krypto ist riskant – DYOR und nur mit Geld spielen, das du verlieren kannst.</p></div>
+        <div class="card"><h4 class="font-semibold">Warum der Name?</h4><p class="text-white/75 text-sm mt-1">Weil wir keine Lust auf Bundler‑Spielchen haben. Der Ton ist frech, die Message klar.</p></div>
+        <div class="card"><h4 class="font-semibold">Wo kaufe ich?</h4><p class="text-white/75 text-sm mt-1">Über unsere Pump.fun‑Seite (Button oben). Nach Launch bitte Contract prüfen.</p></div>
+        <div class="card"><h4 class="font-semibold">Wie prüfe ich Bundler?</h4><p class="text-white/75 text-sm mt-1">Nutze die Bubble‑Map/Holders‑Ansicht und achte auf dichte Cluster & hohe Konzentration weniger Wallets. Mehr dazu in unseren Guides (Community).</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 mt-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/70">
+      <div>© <span id="year"></span> FTB • Fuck These Bundlers</div>
+      <div class="flex items-center gap-3">
+        <a id="tgBtn2" target="_blank" rel="noreferrer" class="hover:text-white">Telegram</a>
+        <a id="xBtn2" target="_blank" rel="noreferrer" class="hover:text-white">X/Twitter</a>
+        <a id="pumpBtn4" target="_blank" rel="noreferrer" class="hover:text-white">Pump.fun</a>
+      </div>
+    </div>
+    <p class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-[11px] text-white/50 pb-10">Haftungsausschluss: Keine Finanzberatung. Krypto kann zum Totalverlust führen. DYOR.</p>
+  </footer>
+
+  <!-- Simple config block (EDIT THESE VALUES) -->
+  <script>
+    const CONFIG = {
+      name: 'Fuck These Bundlers',
+      ticker: 'FTB',
+      contract: 'TBA',             // <- nach Launch einfügen (z.B. 7HGBX...)
+      pumpUrl: 'https://pump.fun/', // <- Direktlink zu deinem Coin auf Pump.fun
+      xUrl: 'https://x.com/',       // <- Dein X/Twitter Link
+      tgUrl: 'https://t.me/',       // <- Dein Telegram Link
+      chartUrl: 'https://dexscreener.com/solana/REPLACE_CONTRACT',
+      bubbleMapUrl: '',             // <- Falls verfügbar: EMBED-URL zum Bubble-/Holders-Viewer
+      supply: '1,000,000,000',
+      liquidity: '100% in LP, renounced/burned (optional)',
+    };
+
+    // apply config
+    document.getElementById('brand').innerHTML = `${CONFIG.ticker} <span class="ml-2 text-white/60 text-sm">${CONFIG.name}</span>`;
+    document.getElementById('heroTitle').textContent = `${CONFIG.ticker}: ${CONFIG.name}`;
+    document.getElementById('contractText').textContent = CONFIG.contract;
+    document.getElementById('supplyText').textContent = CONFIG.supply;
+    document.getElementById('liqText').textContent = CONFIG.liquidity;
+
+    const setHref = (id, url) => { const el = document.getElementById(id); if (el) el.href = url; };
+    ['pumpBtn','pumpBtn2','pumpBtn3','pumpBtn4'].forEach(id => setHref(id, CONFIG.pumpUrl));
+    ['xBtn','xBtn2','xBtn3'].forEach(id => setHref(id, CONFIG.xUrl));
+    ['tgBtn','tgBtn2','tgBtn3'].forEach(id => setHref(id, CONFIG.tgUrl));
+    setHref('chartBtn', CONFIG.chartUrl);
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.getElementById('copyBtn').addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(CONFIG.contract);
+        const btn = document.getElementById('copyBtn');
+        const old = btn.textContent;
+        btn.textContent = 'Kopiert';
+        setTimeout(()=> btn.textContent = old, 1500);
+      } catch (e) {}
+    });
+
+    // Bubble map embed (if provided and allowed)
+    (function initBubble(){
+      const wrap = document.getElementById('bubbleWrap');
+      const fb = document.getElementById('bubbleFallback');
+      if (!CONFIG.bubbleMapUrl) return; // keep fallback
+      // try to embed
+      const iframe = document.createElement('iframe');
+      iframe.src = CONFIG.bubbleMapUrl;
+      iframe.style.width = '100%';
+      iframe.style.height = '560px';
+      iframe.style.border = '0';
+      iframe.loading = 'lazy';
+      // Clear fallback and insert iframe
+      wrap.innerHTML = '';
+      wrap.appendChild(iframe);
+      // If provider blocks embedding, show a button instead
+      iframe.addEventListener('error', () => {
+        wrap.innerHTML = '';
+        const a = document.createElement('a');
+        a.href = CONFIG.bubbleMapUrl;
+        a.target = '_blank';
+        a.rel = 'noreferrer';
+        a.className = 'px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20';
+        a.textContent = 'Bubble‑Map extern öffnen';
+        wrap.appendChild(a);
+      });
+    })();
+  </script>
+</body>
+</html>
